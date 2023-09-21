@@ -12,23 +12,15 @@
  */
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *first = *stack;
-	stack_t *second = (*stack)->next;
+	int temp;
 
-	if (!stack || !*stack || !((*stack)->next))
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	first->next = second->next;
-	second->prev = NULL;
-	if (first->next)
-	{
-		first->next->prev = first;
-	}
-	second->next = first;
-	first->prev = second;
-
-	*stack = second; 
+	temp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
 }
