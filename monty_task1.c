@@ -12,7 +12,7 @@
 void monty_push(stack_t **stack, unsigned int line_number)
 {
 	char *arg = strtok(NULL, " \t\n");
-	int i = 0, value;
+	int value;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (!arg || !*arg)
@@ -21,18 +21,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	while (arg[i])
-	{
-		if (!isdigit(arg[i]) && !(i == 0 && arg[i] == '-' && isdigit(arg[i + 1])))
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
-		i++;
-	}
-
 	value = atoi(arg);
-
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -50,20 +39,20 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
-
-
 /**
  * monty_pall - Prints all values on the stack, starting from the top.
- * @stack: A pointer to the stack.
+ * @stack: A pointer to the stack.i
  * @line_number: The line number of the opcode in the Monty bytecode file.
  *
  * Description:
  * This function prints all values on the stack, starting from the top.
  * If the stack is empty, it does not print anything.
  */
-void monty_pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
+void monty_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
+
+	(void)line_number;
 
 	while (current)
 	{
