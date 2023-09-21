@@ -13,17 +13,23 @@
  * element is removed, making the stack one element shorter.
  */
 void monty_add(stack_t **stack, unsigned int line_number)
-{
-	stack_t *first = *stack;
-	stack_t *second = first->next;
-	if (!stack || !*stack || !((*stack)->next))
+{	
+	int result;
+	stack_t *temp = *stack;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	second->n += first->n;
 
-	*stack = second;
-	free(first);
+	result = (*stack)->n + (*stack)->next->n;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
+	{
+		(*stack)->prev = NULL;
+	}
+	free(temp);
+	(*stack)->n = result;
 }
 

@@ -9,7 +9,7 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 {
 	int ascii_value;
 	stack_t *temp = *stack;
-	*stack = (*stack)->next;
+	
 
 	if (stack == NULL || *stack == NULL)
 	{
@@ -18,7 +18,7 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	}
 
 	ascii_value = (*stack)->n;
-    
+
 	if (ascii_value < 0 || ascii_value > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
@@ -29,6 +29,7 @@ void monty_pchar(stack_t **stack, unsigned int line_number)
 	putchar('\n');
 
 	/* Pop the top element*/
+	*stack = (*stack)->next;
 	if (*stack != NULL)
 	{
 		(*stack)->prev = NULL;
