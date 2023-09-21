@@ -23,6 +23,7 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	{"nop", monty_nop},
 	{"sub", monty_sub},
 	{"div",monty_div},
+	{"mul", monty_mul},
 	{NULL, NULL}
 	};
 
