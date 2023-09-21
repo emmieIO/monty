@@ -45,4 +45,5 @@ void monty_pint(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number);
 void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
 #endif /* _MAIN_H_ */
