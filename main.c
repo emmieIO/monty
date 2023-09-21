@@ -38,6 +38,10 @@ int main(int argc, char *argv[]) {
 	if (line[0] == '#' || line[0] == '\n') {
             continue;
         }
+
+	if (opcode == NULL) {
+            continue;
+        }
         execute_instruction(opcode, &stack, line_number);
     }
 
