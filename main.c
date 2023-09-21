@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     while (fgets(line, sizeof(line), file)) {
         line_number++;
         opcode = strtok(line, " \t\n");
-	if (line[0] == '#' && line[0] == '\n') {
+	if (line[0] == '#') {
             continue;
         }
 
