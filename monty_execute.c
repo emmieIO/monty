@@ -24,6 +24,7 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	{"sub", monty_sub},
 	{"div",monty_div},
 	{"mul", monty_mul},
+	{"mod", monty_mod},
 	{NULL, NULL}
 	};
 
