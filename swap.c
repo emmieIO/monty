@@ -23,6 +23,10 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 
 	first->next = second->next;
 	second->prev = NULL;
+	if (first->next)
+	{
+		first->next->prev = first;
+	}
 	second->next = first;
 	first->prev = second;
 
