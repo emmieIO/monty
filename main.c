@@ -35,10 +35,6 @@ int main(int argc, char *argv[]) {
     while (fgets(line, sizeof(line), file)) {
         line_number++;
         opcode = strtok(line, " \t\n");
-        if (opcode == NULL || strcmp(opcode, "#") == 0) {
-            continue;  /* Ignore empty lines and comments */
-        }
-
         execute_instruction(opcode, &stack, line_number);
     }
 
