@@ -21,7 +21,6 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	{"swap", monty_swap},
 	{"add", monty_add},
 	{"nop", monty_nop},
-	/* Add more instructions here as needed */
 	{NULL, NULL}
 	};
 
@@ -38,4 +37,3 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
-
