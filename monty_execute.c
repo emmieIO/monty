@@ -20,6 +20,7 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	{"pop", monty_pop},
 	{"swap", monty_swap},
 	{"add", monty_add},
+	{"nop", monty_nop},
 	/* Add more instructions here as needed */
 	{NULL, NULL}
 	};
