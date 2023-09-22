@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * monty_push - Pushes an integer onto the stack.
  * @stack: A pointer to the stack.
@@ -81,7 +81,6 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
-#include "main.h"
 
 /**
  * monty_pop - Removes the top element of the stack.

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * free_stack - Frees the memory used by a stack.
  * @stack: A pointer to the head of the stack.

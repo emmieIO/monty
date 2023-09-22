@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * execute_instruction - Execute a Monty instruction based on the opcode.
  * @opcode: The opcode of the instruction to execute.
@@ -26,7 +26,7 @@ void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number
 	{"mul", monty_mul},
 	{"mod", monty_mod},
 	{"pchar", monty_pchar},
-	{"", monty_rotl},
+	{"rotl", monty_rotl},
 	{NULL, NULL}
 	};
 
